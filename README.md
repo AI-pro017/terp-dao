@@ -11,7 +11,7 @@ The governance side is built on the DAO DAO v1 contracts by Zeke Medley. The NFT
 | `contracts/cw-core` | The DAO itself. It holds the treasury, keeps track of its voting and proposal modules and executes passed proposals. |
 | `contracts/cw-proposal-single` | Yes or no proposals with configurable quorum, threshold and voting period. |
 | `contracts/customized_nft` | A cw721 NFT contract with extra collection details (name, description, logo and banner) and a burn message. The `mint_number_limit` and `update_minter` options are in the messages but don't take effect yet. |
-| `contracts/nft_staking` | Lets people stake NFTs from whitelisted collections. The admin creates a reward pool per collection with a reward per block and an optional end time, and stakers earn rewards for as long as their NFT stays staked. |
+| `contracts/nft_staking` | Lets people stake NFTs from whitelisted collections. The admin creates a reward pool per collection with a reward per block and an optional end time. Rewards are tracked for each staker while their NFTs stay staked, but paying them out isn't wired up yet. |
 | `contracts/nft_auction` | For now, an escrow contract. It holds native or CW20 funds until an arbiter approves the release, or refunds them after a timeout. It's the base the auction flow is meant to grow from. |
 
 Shared code lives in `packages/` (voting helpers, proposal and vote hooks, pagination and test utilities). `debug/` has small contracts that are only used in tests, such as a sudo proposal module and a simple CW20 balance voting module.
